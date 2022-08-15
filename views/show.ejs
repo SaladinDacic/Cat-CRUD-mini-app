@@ -1,0 +1,47 @@
+<%- include("partials/header") %>
+
+
+
+<div class="container">
+    <div>
+        <div class="row">
+            <img  src="<%= cat.image %>" class="w-100 rounded">
+        </div>
+        
+
+        <div class="card text-white bg-dark mb-3 text-center row">
+            <div class="card-body">
+              <h5 class="card-title"><%= cat.title %></h5>
+              <p class="card-text"><%- cat.body %></p>
+
+
+            <div class="row justify-content-around">
+                <form action="/cats/<%= cat._id %>/edit" method="GET">
+                    <button class="btn btn-outline-info">Edit post</button>
+                </form>        
+                <form action="/cats/<%= cat._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-large btn-outline-danger">Delete post</button>
+                </form>
+            </div>
+            
+            </div>
+            <div class="card-footer text-muted">
+                <span>><%= cat.created.toDateString() %><</span>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<%- include("partials/footer") %>
+
+

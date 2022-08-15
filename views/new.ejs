@@ -1,0 +1,30 @@
+<%- include("partials/header") %>
+
+
+<div class="container">
+
+    <form action="/cats" method="POST">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Name</label>
+          <input name="cats[title]" type="text" class="form-control" id="exampleFormControlInput1" placeholder="naziv">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Image link</label>
+          <input name="cats[image]" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Here goes image link">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea name="cats[body]" class="form-control" id="exampleFormControlTextarea1" rows="3">Here goes text of cat-blog</textarea>
+        </div>
+
+        <div >
+            <input class="btn btn-outline-primary" type="submit">
+        </div>
+    </form>
+
+
+</div>
+
+
+<%- include("partials/footer") %>

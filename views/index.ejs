@@ -1,0 +1,57 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <div class="row ">
+        <% cats.forEach(function(cat){ %>
+            <div class="col-md-9 col-lg-5 " style="margin: 20px; padding: 0; ">
+                
+                    
+            
+                    <div class="card text-white bg-dark mb-3 text-center row">
+                        <div class="card-body">
+                          <h5 class="card-title"><%- cat.title %></h5>
+                          <p class="card-text"><%= cat.body.substring(0, 20) %>...</p>
+                          
+                          <div id="slika" class="row ">
+                              <img  src="<%= cat.image %>" class="w-100 rounded" style="height: 450px;" >
+                            </div>
+                            <br>
+                            
+
+                        <div class="row justify-content-around">
+                            <form action="/cats/<%= cat._id %>/" method="GET">
+                                <button class="btn btn-outline-primary">Show post</button>
+                            </form>        
+                            <form action="/cats/<%= cat._id %>/edit" method="GET">
+                                <button class="btn btn-outline-warning">Edit post</button>
+                            </form>     
+                        </div>
+                        
+                        </div>
+                        <div class="card-footer ">
+                            <span>><%= cat.created.toDateString() %><</span>
+                        </div>
+                    </div>
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        <% }); %>
+    </div>
+     <br>
+     <br>
+    
+</div>
+  
+<%- include("partials/footer") %>
